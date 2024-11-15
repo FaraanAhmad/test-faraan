@@ -13,8 +13,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
 })
 
-const { addMovie } = require('./utils/MovieUilAlz');
+const { addMovie, editMovie } = require('./utils/MovieUilAlz');
 app.post('/add-resource', addMovie);
+app.put('/edit-movie/:id', editMovie);
 
 
 server = app.listen(PORT, function () {

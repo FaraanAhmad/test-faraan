@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+  <script src="js/EditMovie.js"></script>
   <script src="js/AddMovieAlz.js"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -43,6 +43,9 @@
             </tbody>
           </table>
         </div>
+        <label for="movieIdInput">Enter Movie ID:</label>
+        <input type="text" id="movieIdInput">
+        <button onclick="editMovie()">Edit movie</button>
       </div>
     </div>
   </div>
@@ -96,46 +99,54 @@
     </div>
   </div>
 
-  <!-- Edit Modal -->
-  <div class="modal fade" id="editResourceModal" tabindex="-1" role="dialog" aria-labelledby="editResourceModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editResourceModalLabel">Edit Resource</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="name">Resource Name</label>
-              <input type="text" class="form-control" id="editName" placeholder="Enter resource name">
-            </div>
-            <div class="form-group">
-              <label for="location">Location</label>
-              <input type="text" class="form-control" id="editLocation" placeholder="Enter resource location">
-            </div>
-            <div class="form-group">
-              <label for="description">Description</label>
-              <input type="text" class="form-control" id="editDescription" placeholder="Enter short description">
-            </div>
-            <div class="form-group">
-              <label for="description">Owner</label>
-              <input type="text" class="form-control" id="editOwner" placeholder="Enter resource owner">
-            </div>
-            <p align="right" id="editMessage" class=""></p>
-          </form>
-        </div>
-        <div class="modal-footer">
+ <!-- Edit Modal -->
+ <div class="modal fade" id="editMovieModal" tabindex="-1" role="dialog" aria-labelledby="editMovieModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="editMovieModalLabel">Edit Movie</h5>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form>
+         <div class="form-group">
+           <label for="Image">Image</label>
+           <input type="text" class="form-control" id="editImage" placeholder="Enter movie Image">
+         </div>
+         <div class="form-group">
+           <label for="Title">Movie title</label>
+           <input type="text" class="form-control" id="editTitle" placeholder="Enter movie title">
+         </div>
+         <div class="form-group">
+           <label for="Description">Description</label>
+           <input type="text" class="form-control" id="editDescription" placeholder="Enter movie description">
+         </div>
+         <div class="form-group">
+           <label for="Director">Directors</label>
+           <input type="text" class="form-control" id="editDirector" placeholder="Enter movie directors">
+         </div>
+         <div class="form-group">
+           <label for="Writer">Writers</label>
+           <input type="text" class="form-control" id="editWriter" placeholder="Enter movie writers">
+         </div>
+         <div class="form-group">
+           <label for="Star">Stars</label>
+           <input type="text" class="form-control" id="editStar" placeholder="Enter movie stars">
+         </div>
+         <p align="right" id="editMessage" class=""></p>
+       </form>
+     </div>
+     <div class="modal-footer">
 
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="updateButton" onclick="">Update Resource</button>
-        </div>
-      </div>
-    </div>
-  </div>
+       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-primary" id="updateButton" onclick="">Update Resource</button>
+     </div>
+   </div>
+ </div>
+</div>
 
 </body>
 
