@@ -13,9 +13,14 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/" + startPage);
 })
 
-const { addMovie, editMovie } = require('./utils/MovieUilAlz');
+const { addMovie} = require('./utils/MovieUilAlz');
 app.post('/add-resource', addMovie);
+
+const {  editMovie } = require('./utils/MovieUilFaraan');
 app.put('/edit-movie/:id', editMovie);
+
+const { viewResources } = require('./utils/MovieUilFir');
+app.get('/view-resource/:search', viewResources);
 
 
 server = app.listen(PORT, function () {
