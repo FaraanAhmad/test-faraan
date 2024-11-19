@@ -31,7 +31,7 @@ async function addMovie(req, res) {
             return res.status(400).json({ message: 'All fields are required!' });
         }
         else if (movieDescription.length < 6) {
-            return res.status(500).json({ message: 'Description too short!' });
+            return res.status(500).json({ message: 'description too short' });
         }
         else {
             const newResource = new Movie(movieImage, movieTitle, movieDescription, movieDirectors, movieWriters, movieStars);
