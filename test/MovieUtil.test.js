@@ -19,18 +19,22 @@ describe('Resource API', () => {
     });
 
     let count = 0;
-    let resourceId;
+    let movieID;
 
     describe('PUT /edit-movie/:id', () => {
-        it('should update an existing resource', (done) => {
+
+
+        it('should update an existing movie', (done) => {
             chai.request(baseUrl)
-                .put(`/edit-resource/${resourceId}`)
+                .put(`/edit-movie/${movieID}`)
                 .send({
-                    movieimage: 'Updated image', movieTitle: 'Updated title', movieDescription: 'Updated description', movieDirectors: 'Updated directors', movieWriters: 'Updated writers', movieStars: 'Updated stars'
+                    movieImage: 'Updated image', movieTitle: 'Updated title', 
+                    movieDescription: 'Updated description', movieDirectors: 'Updated directors',
+                    movieWriters: 'Updated writers', movieStars: 'Updated stars'
                 })
                 .end((err, res) => {
                     expect(res).to.have.status(201);
-                    expect(res.body.message).to.equal('Resource modified successfully!');
+                    expect(res.body.message).to.equal('Movie modified successfully!');
                     done();
                 });
         });

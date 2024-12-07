@@ -23,24 +23,24 @@ async function editMovie(req, res) {
         const id = req.params.id;
         const movieImage = req.body.movieImage;
         const movieTitle = req.body.movieTitle;
-        const moviedescription = req.body.movieDescription;
-        const moviedirectors = req.body.movieDirectors;
-        const moviewriters = req.body.movieWriters;
-        const moviestars = req.body.movieStars;
+        const movieDescription = req.body.movieDescription;
+        const movieDirectors = req.body.movieDirectors;
+        const movieWriters = req.body.movieWriters;
+        const movieStars = req.body.movieStars;
 
         const allMovies = await readJSON('utils/movies.json');
 
         var modified = false;
 
         for (var i = 0; i < allMovies.length; i++) {
-            var curcurrResource = allMovies[i];
-            if (curcurrResource.id == id) {
+            var curcurrMovie = allMovies[i];
+            if (curcurrMovie.id == id) {
                 allMovies[i].movieImage = movieImage;
                 allMovies[i].movieTitle = movieTitle;
-                allMovies[i].movieDescription = moviedescription;
-                allMovies[i].movieDirectors = moviedirectors;
-                allMovies[i].movieWriters = moviewriters;
-                allMovies[i].movieStars = moviestars;
+                allMovies[i].movieDescription = movieDescription;
+                allMovies[i].movieDirectors = movieDirectors;
+                allMovies[i].movieWriters = movieWriters;
+                allMovies[i].movieStars = movieStars;
 
                 modified = true;
             }
