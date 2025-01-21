@@ -34,6 +34,8 @@ async function editMovie(req, res) {
 
         for (var i = 0; i < allMovies.length; i++) {
             var curcurrResource = allMovies[i];
+            // console.log(curcurrResource.id)
+            // console.log(id)
             if (curcurrResource.id == id) {
                 allMovies[i].movieImage = movieImage;
                 allMovies[i].movieTitle = movieTitle;
