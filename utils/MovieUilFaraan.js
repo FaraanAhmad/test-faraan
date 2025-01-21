@@ -47,22 +47,22 @@ async function editMovie(req, res) {
         }
 
         if (!movieTitle) {
-            return res.status(500).json({ message: 'The movie title must be filled' });
+            return res.status(400).json({ message: 'The movie title must be filled' });
         }
         else if (typeof movieTitle !== 'string') {
-            return res.status(500).json({ message: 'The movie title must be a string' });
+            return res.status(400).json({ message: 'The movie title must be a string' });
         }
         else if (movieTitle.trim().length === 0) {
-            return res.status(500).json({ message: 'The movie title must not be empty' });
+            return res.status(400).json({ message: 'The movie title must not be empty' });
         }
         else if (modified) {
             await fs.writeFile('utils/movies.json', JSON.stringify(allMovies), 'utf8');
             return res.status(201).json({ message: 'Movie modified successfully!' });
         } else {
-            return res.status(500).json({ message: 'Error occurred, unable to modify!' });
-        }
+            return res.status(400).json({ message: 'Error occurred, unable to modify!' });
+        }r
     } catch (error) {
-        return res.status(500).json({ message: error.message });
+        return res.status(400).json({ message: error.message });
     }
 }
 
