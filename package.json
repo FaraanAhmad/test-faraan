@@ -4,7 +4,7 @@
   "description": "This is a reference project for the DVOPS subject.",
   "main": "index.js",
   "scripts": {
-    "backend-test": "nyc --nycrc-path .nycrc-backend mocha"
+    "backend-test": "nyc --nycrc-path .nyrc-backend mocha"
   },
   "keywords": [],
   "author": "",

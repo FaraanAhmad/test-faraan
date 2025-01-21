@@ -8,16 +8,6 @@ async function readJSON(filename) {
     } catch (err) { console.error(err); throw err; }
 }
 
-async function writeJSON(object, filename) {
-    try {
-        const allObjects = await readJSON(filename);
-        allObjects.push(object);
-
-        await fs.writeFile(filename, JSON.stringify(allObjects), 'utf8');
-        return allObjects;
-    } catch (err) { console.error(err); throw err; }
-}
-
 async function editMovie(req, res) {
     try {
         const id = req.params.id;
@@ -34,6 +24,8 @@ async function editMovie(req, res) {
 
         for (var i = 0; i < allMovies.length; i++) {
             var curcurrMovie = allMovies[i];
+            console.log(curcurrMovie.id)
+            console.log(id)
             if (curcurrMovie.id == id) {
                 allMovies[i].movieImage = movieImage;
                 allMovies[i].movieTitle = movieTitle;
@@ -69,5 +61,5 @@ async function editMovie(req, res) {
 
 
 module.exports = {
-    readJSON, writeJSON, editMovie
+    readJSON, editMovie
 };
