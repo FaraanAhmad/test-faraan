@@ -41,7 +41,8 @@ console.log(response)
         if (response.message == "Movie modified successfully!") {
             document.getElementById("editMessage").innerHTML = 'Edited Movie: ' + jsonData.movieTitle + '!';
             document.getElementById("editMessage").setAttribute("class", "text-success");
-            window.location.href = 'index.html';
+            alert("Movie updated successfully")
+            //window.location.href = 'index.html';
         }
         else {
             document.getElementById("editMessage").innerHTML = 'Unable to edit movie!';
