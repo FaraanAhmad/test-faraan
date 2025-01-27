@@ -6,7 +6,7 @@
   "scripts": {
     "backend-test": "nyc --nycrc-path .nyrc-backend mocha",
     "frontend-instrument": "xcopy public instrumented /I /E /Y & nyc instrument public instrumented",
-"frontend-test": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run"
+    "frontend-test": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,6 @@
     "fs": "^0.0.1-security",
     "mocha": "^10.8.2",
     "nyc": "^17.1.0",
-    "winston": "^3.15.0"
+    "winston": "^3.17.0"
   }
 }
