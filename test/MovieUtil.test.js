@@ -71,7 +71,7 @@ describe('Resource API', () => {
                 });
         });
 
-        it('movie title should be filled', (done) => {
+        it('movie title must be filled', (done) => {
             chai.request(baseUrl)
                 .put(`/edit-movie/${movieID}`)
                 .send({

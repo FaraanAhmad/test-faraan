@@ -50,7 +50,7 @@ describe('Movie Management Frontend', () => {
     cy.get('#editMessage').contains('All fields are required!').should('exist');
   });
 
-  it('All fields require input', () => {
+  it('Movie title cannot be whitespace', () => {
     cy.visit(baseUrl);
     // Click the edit button for the resource
     cy.get('#movieIdInput').clear().type('1731983610108878', { force: true });
